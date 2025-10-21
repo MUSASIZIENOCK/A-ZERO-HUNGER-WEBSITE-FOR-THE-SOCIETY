@@ -1,48 +1,69 @@
 /* ===== Base Styles ===== */
-body {
-    background: #f2f2f2; /* soft neutral background */
-    font-family: Verdana, Tahoma, sans-serif;
+* {
     box-sizing: border-box;
-    padding: 5px;
-    margin: 20px;
-    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f2f2f2; /* soft background */
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 16px;
     line-height: 1.5;
 }
 
 /* ===== Header ===== */
 header {
-    background: #b92d49; /* matching card color */
+    background: #b92d49;
     border-radius: 10px;
     display: flex;
-    flex-direction: column; /* stack logo + title */
-    align-items: center; /* center horizontally */
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     padding: 10px;
-    gap: 5px; /* space between logo and title */
+    gap: 5px;
     text-align: center;
 }
 
 header img {
-    width: 25%; /* logo scales with screen */
+    width: 25%;
     max-width: 150px;
     height: auto;
+}
+
+/* ===== Headings ===== */
+.container h2 {
+    text-align: center;
+    font-size: 2.5vw;
+    margin: 10px 0;
+}
+
+.container h2 p {
+    text-align: center;
+    font-size: 1.5vw;
+    margin: 5px 0 15px;
 }
 
 /* ===== Buttons ===== */
 button {
     background-color: cadetblue;
+    border: none;
     cursor: pointer;
     border-radius: 10px;
-    padding: 10px;
-    width: auto;
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin: 10px 5px;
 }
 
-/* ===== Text Sections ===== */
-.intro,
-.text,
-.causes,
-.jar {
+/* ===== Inputs ===== */
+input {
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    max-width: 100%;
     text-align: center;
+    margin: 10px auto;
+    display: block;
     font-size: 1rem;
 }
 
@@ -55,20 +76,10 @@ button {
     margin: 10px;
     text-align: center;
     padding: 10px;
+    flex: 1 1 250px; /* flexible for responsiveness */
 }
 
-/* ===== Containers ===== */
-.container h2 {
-    text-align: center;
-    font-size: 2.5vw; /* responsive heading */
-}
-
-.container h2 p {
-    text-align: center;
-    font-size: 1.5vw; /* responsive subheading */
-}
-
-/* ===== Media & Images ===== */
+/* ===== Media / Image Containers ===== */
 .media,
 .solns,
 .impact {
@@ -82,31 +93,35 @@ button {
 .solns img,
 .impact img {
     width: 100%;
-    max-width: 100%; /* fill container but not exceed container width */
+    max-width: 300px; /* default max width */
     height: auto;
     border-radius: 10px;
-    flex: 1 1 250px; /* flexible width, min 250px */
+    flex: 1 1 250px; /* grow/shrink */
 }
 
-/* ===== Inputs ===== */
-input {
-    border-radius: 10px;
-    padding: 10px;
-    width: 100%;
-    max-width: 100%;
+/* ===== Text Sections ===== */
+.intro,
+.text,
+.causes,
+.jar {
     text-align: center;
-    margin: 10px auto;
-    display: block;
+    font-size: 1rem;
+    margin: 10px;
 }
 
 /* ===== Footer ===== */
 footer {
     background: #b92d49;
     border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    color: white;
 }
 
 /* ===== Responsive Media Queries ===== */
-@media (max-width: 1024px) {
+
+/* Large screens (laptops) */
+@media (max-width: 1200px) {
     header img {
         width: 20%;
         max-width: 130px;
@@ -117,8 +132,14 @@ footer {
     .container h2 p {
         font-size: 1.25rem;
     }
+    .media img,
+    .solns img,
+    .impact img {
+        max-width: 250px;
+    }
 }
 
+/* Tablets */
 @media (max-width: 768px) {
     header img {
         width: 25%;
@@ -130,8 +151,23 @@ footer {
     .container h2 p {
         font-size: 1.1rem;
     }
+    .media img,
+    .solns img,
+    .impact img {
+        max-width: 200px;
+    }
+    .meal, .field, .crops,
+    .practices, .people, .nutrition,
+    .classroom, .fields, .food {
+        flex: 1 1 200px;
+    }
+    button {
+        padding: 8px 15px;
+        font-size: 0.95rem;
+    }
 }
 
+/* Phones */
 @media (max-width: 480px) {
     header img {
         width: 35%;
@@ -147,5 +183,20 @@ footer {
     .solns img,
     .impact img {
         flex: 1 1 100%; /* full width on phones */
+        max-width: 100%;
+    }
+    .meal, .field, .crops,
+    .practices, .people, .nutrition,
+    .classroom, .fields, .food {
+        flex: 1 1 100%;
+    }
+    button {
+        width: 90%;
+        padding: 8px;
+        font-size: 0.95rem;
+    }
+    input {
+        width: 95%;
+        font-size: 0.95rem;
     }
 }
