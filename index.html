@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <!-- Only link your CSS -->
+    <title>Zero Hunger Initiative</title>
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
+    <!-- Header with logo, title and nav -->
     <header>
-        <div class="logo-title-nav">
-            <img src="IMAGES/bk co.logo.png" alt="company logo">
-            <div class="title-nav">
+        <div class="header-container">
+            <img src="IMAGES/bk co.logo.png" alt="Company Logo" class="logo">
+            <div class="header-text-nav">
                 <h1>ZERO HUNGER INITIATIVE</h1>
                 <h3>BK INITIATIVE CO.UG</h3>
                 <nav>
@@ -25,96 +25,104 @@
         </div>
     </header>
 
-    <div class="container">
-        <div class="intro">
-            <h3>A World Where No One Goes Hungry</h3>
-            <p>Join us in the fight to end hunger, achieve food security, improve food nutrition and promote sustainable agriculture globally.</p>
-            <button>Get Involved Now</button>
-        </div>
+    <!-- Intro Section -->
+    <section class="intro container">
+        <h2>A World Where No One Goes Hungry</h2>
+        <p>Join us in the fight to end hunger, achieve food security, improve food nutrition, and promote sustainable agriculture globally.</p>
+        <button>Get Involved Now</button>
+    </section>
 
-        <div class="text">
-            <h2>About Zero Hunger</h2>
-            <p>Zero Hunger is the second of the 17 Sustainable Development Goals (SDGs) established by the United Nations in 2015. It aims to end hunger, achieve food security, improve nutrition and promote sustainable agriculture by 2030.</p>
-            <p>Millions worldwide still suffer from chronic undernourishment. Our mission is to raise awareness, mobilize resources, and implement effective strategies to eradicate hunger in all its forms.</p>
-        </div>
+    <!-- About Section -->
+    <section class="about container">
+        <h2>About Zero Hunger</h2>
+        <p>Zero Hunger is the second of the 17 Sustainable Development Goals (SDGs) established by the United Nations in 2015. It aims to end hunger, achieve food security, improve nutrition, and promote sustainable agriculture by 2030.</p>
+        <p>Millions worldwide still suffer from chronic undernourishment. Our mission is to raise awareness, mobilize resources, and implement effective strategies to eradicate hunger in all its forms.</p>
+    </section>
 
-        <div class="media">
-            <div class="meal">
-                <img src="IMAGES/children.jpg" alt="Children eating a healthy meal">
-                <h4>Our vision</h4>
-                <p>A future where every person has access to safe, nutritious, and sufficient food all year.</p>
-            </div>
-            <div class="field">
-                <img src="IMAGES/farmers.jpg" alt="Farmers working at a field">
-                <h4>Our Mission</h4>
-                <p>To implement sustainable agricultural practices and help communities most affected by food insecurity.</p>
-            </div>
-            <div class="crops">
-                <img src="IMAGES/crops.jpg" alt="Community garden with diverse crops">
-                <h4>Our Approach</h4>
-                <p>Collaborating with local organizations, government, and individuals to create lasting change.</p>
-            </div>
+    <!-- Media Section -->
+    <section class="media container">
+        <div class="card">
+            <img src="IMAGES/children.jpg" alt="Children eating a healthy meal">
+            <h4>Our Vision</h4>
+            <p>A future where every person has access to safe, nutritious, and sufficient food all year.</p>
         </div>
-
-        <div class="causes">
-            <h2>Understanding the challenge</h2>
-            <p>Watch this video to understand some of the complex factors causing global hunger and why urgent action is needed.</p>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/ykeEpDXtpMA?si=mrPTheFhR5Xijy8m"
-             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
-            <button>Learn More About Causes</button>
+        <div class="card">
+            <img src="IMAGES/farmers.jpg" alt="Farmers working at a field">
+            <h4>Our Mission</h4>
+            <p>To implement sustainable agricultural practices and help communities most affected by food insecurity.</p>
         </div>
+        <div class="card">
+            <img src="IMAGES/crops.jpg" alt="Community garden with diverse crops">
+            <h4>Our Approach</h4>
+            <p>Collaborating with local organizations, government, and individuals to create lasting change.</p>
+        </div>
+    </section>
 
-        <h2>Our Solutions And Strategies</h2>
-        <div class="solns">
-            <div class="practices">
+    <!-- Causes Section -->
+    <section class="causes container">
+        <h2>Understanding the Challenge</h2>
+        <p>Watch this video to understand some of the complex factors causing global hunger and why urgent action is needed.</p>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/ykeEpDXtpMA" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <button>Learn More About Causes</button>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="solutions container">
+        <h2>Our Solutions and Strategies</h2>
+        <div class="cards">
+            <div class="card">
                 <img src="IMAGES/farming.jpg" alt="Sustainable Farming practices">
                 <h4>Sustainable Agriculture</h4>
                 <p>Promoting eco-friendly farming methods that increase yield and protect natural resources.</p>
                 <button>Discover Projects</button>
             </div>
-            <div class="people">
+            <div class="card">
                 <img src="IMAGES/food.jpg" alt="Food distribution to needy people">
                 <h4>Food Aid and Distribution</h4>
                 <p>Providing emergency food assistance and establishing efficient food distribution networks.</p>
                 <button>See Our Reach</button>
             </div>
-            <div class="nutrition">
+            <div class="card">
                 <img src="IMAGES/nutrition.jpg" alt="People learning about nutrition">
                 <h4>Nutrition Education</h4>
                 <p>Educating communities on nutrition, food preparation, and preventing malnutrition.</p>
                 <button>Explore Programs</button>
             </div>
         </div>
+    </section>
 
+    <!-- Impact Section -->
+    <section class="impact container">
         <h2>Our Impact</h2>
-        <div class="impact">
-            <div class="food">
+        <div class="cards">
+            <div class="card">
                 <img src="IMAGES/happy family.jpg" alt="Happy family receiving food">
-                <h4>Maria's story</h4>
+                <h4>Maria's Story</h4>
                 <p>Thanks to sustainable farming training, Maria's family has enough food to eat and sell excess crops.</p>
             </div>
-            <div class="fields">
+            <div class="card">
                 <img src="IMAGES/field.jpg" alt="Thriving village with fields">
                 <h4>The Green Village Project</h4>
                 <p>A community transformed by new irrigation systems, leading to year-round food security.</p>
             </div>
-            <div class="classroom">
+            <div class="card">
                 <img src="IMAGES/classroom.jpg" alt="Student in a classroom">
                 <h4>Child Nutrition Program</h4>
                 <p>Providing school meals improves attendance and academic performance for children.</p>
             </div>
         </div>
-    </div>
+    </section>
 
+    <!-- Footer -->
     <footer>
-        <p>Follow us on
-            <a href="">Facebook</a>
-            <a href="">X</a>
-            <a href="">Instagram</a>
+        <p>Follow us on 
+            <a href="#">Facebook</a>
+            <a href="#">X</a>
+            <a href="#">Instagram</a>
         </p>
-        <p>All rights reserved</p>
-        <p>&copy; BK Initiative 2025</p>
+        <p>All rights reserved &copy; BK Initiative 2025</p>
     </footer>
 </body>
 </html>
