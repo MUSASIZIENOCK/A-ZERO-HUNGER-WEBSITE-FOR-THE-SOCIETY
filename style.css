@@ -1,31 +1,31 @@
 /* ===== Base Styles ===== */
 body {
-    background: #f2f2f2; /* softer, neutral background */
-    font-family: verdana, tahoma;
+    background: #f2f2f2; /* soft neutral background */
+    font-family: Verdana, Tahoma, sans-serif;
     box-sizing: border-box;
     padding: 5px;
     margin: 20px;
-    font-size: 1rem; /* default body text */
+    font-size: 1rem;
     line-height: 1.5;
 }
 
 /* ===== Header ===== */
 header {
-    background: #b92d49; /* stays similar to original but softer */
+    background: #b92d49; /* matching card color */
     border-radius: 10px;
-    text-align: center;
-    padding: 10px; /* added padding for closer logo & heading */
     display: flex;
-    flex-direction: column; /* stack logo and heading vertically */
-    align-items: center;
-    gap: 5px; /* reduce space between logo and heading */
+    flex-direction: column; /* stack logo + title */
+    align-items: center; /* center horizontally */
+    justify-content: center;
+    padding: 10px;
+    gap: 5px; /* space between logo and title */
+    text-align: center;
 }
 
 header img {
-    width: 150px; /* reduced from 200px to bring it closer */
-    max-width: 100%;
+    width: 25%; /* logo scales with screen */
+    max-width: 150px;
     height: auto;
-    background: transparent;
 }
 
 /* ===== Buttons ===== */
@@ -34,6 +34,7 @@ button {
     cursor: pointer;
     border-radius: 10px;
     padding: 10px;
+    width: auto;
 }
 
 /* ===== Text Sections ===== */
@@ -45,31 +46,12 @@ button {
     font-size: 1rem;
 }
 
-/* ===== Media & Images ===== */
-.media,
-.solns,
-.impact {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px; /* space between images */
-}
-
-.media img,
-.solns img,
-.impact img {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    border-radius: 10px;
-}
-
 /* ===== Cards / Sections ===== */
 .meal, .field, .crops,
 .practices, .people, .nutrition,
 .classroom, .fields, .food {
     border-radius: 10px;
-    background: #b92d49; /* matching header color */
+    background: #b92d49;
     margin: 10px;
     text-align: center;
     padding: 10px;
@@ -78,12 +60,43 @@ button {
 /* ===== Containers ===== */
 .container h2 {
     text-align: center;
-    font-size: 2.5vw; /* scales with screen width */
+    font-size: 2.5vw; /* responsive heading */
 }
 
 .container h2 p {
     text-align: center;
-    font-size: 1.5vw;
+    font-size: 1.5vw; /* responsive subheading */
+}
+
+/* ===== Media & Images ===== */
+.media,
+.solns,
+.impact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.media img,
+.solns img,
+.impact img {
+    width: 100%;
+    max-width: 100%; /* fill container but not exceed container width */
+    height: auto;
+    border-radius: 10px;
+    flex: 1 1 250px; /* flexible width, min 250px */
+}
+
+/* ===== Inputs ===== */
+input {
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    margin: 10px auto;
+    display: block;
 }
 
 /* ===== Footer ===== */
@@ -92,26 +105,11 @@ footer {
     border-radius: 10px;
 }
 
-/* ===== Inputs ===== */
-input {
-    border-radius: 10px;
-    padding: 10px;
-    width: 100%; /* responsive width */
-    max-width: 1250px;
-    text-align: center;
-    margin: 10px auto;
-    display: block;
-}
-
 /* ===== Responsive Media Queries ===== */
 @media (max-width: 1024px) {
     header img {
-        width: 130px;
-    }
-    .media img,
-    .solns img,
-    .impact img {
-        max-width: 300px;
+        width: 20%;
+        max-width: 130px;
     }
     .container h2 {
         font-size: 2rem;
@@ -119,24 +117,12 @@ input {
     .container h2 p {
         font-size: 1.25rem;
     }
-    body {
-        font-size: 0.95rem;
-    }
 }
 
 @media (max-width: 768px) {
-    body {
-        margin: 10px;
-        padding: 5px;
-        font-size: 1rem;
-    }
     header img {
-        width: 110px;
-    }
-    .media img,
-    .solns img,
-    .impact img {
-        max-width: 250px;
+        width: 25%;
+        max-width: 110px;
     }
     .container h2 {
         font-size: 1.8rem;
@@ -144,23 +130,12 @@ input {
     .container h2 p {
         font-size: 1.1rem;
     }
-    input {
-        max-width: 90%;
-    }
-    button {
-        width: 90%;
-        padding: 8px;
-    }
 }
 
 @media (max-width: 480px) {
     header img {
-        width: 90px;
-    }
-    .media img,
-    .solns img,
-    .impact img {
-        max-width: 100%;
+        width: 35%;
+        max-width: 90px;
     }
     .container h2 {
         font-size: 1.5rem;
@@ -168,14 +143,9 @@ input {
     .container h2 p {
         font-size: 1rem;
     }
-    body {
-        font-size: 0.95rem;
-    }
-    input {
-        max-width: 95%;
-    }
-    button {
-        width: 90%;
-        padding: 8px;
+    .media img,
+    .solns img,
+    .impact img {
+        flex: 1 1 100%; /* full width on phones */
     }
 }
