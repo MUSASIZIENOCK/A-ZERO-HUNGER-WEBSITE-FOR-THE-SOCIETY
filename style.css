@@ -6,37 +6,75 @@
 }
 
 body {
-    background: #f2f2f2; /* soft neutral background */
     font-family: Verdana, Tahoma, sans-serif;
-    font-size: 16px;
     line-height: 1.5;
+
+    /* Cloud background */
+    background-image: url('IMAGES/clouds.jpg'); /* place your clouds.jpg here */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* ===== Container & Sections ===== */
+.container {
+    background: rgba(255, 255, 255, 0.85); /* semi-transparent for readability */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    text-align: center;
+}
+
+/* Headings & text */
+h1, h2, h3, h4 {
+    color: #333;
+}
+
+p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+/* ===== Buttons ===== */
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background: cadetblue;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #4b8e8e;
 }
 
 /* ===== Header ===== */
 header {
-    background: #b92d49;
-    border-radius: 10px;
+    background: rgba(185, 45, 73, 0.9);
+    color: white;
     padding: 10px 20px;
+    border-radius: 10px;
 }
 
-header .logo-title-nav {
+.header-container {
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 15px;
 }
 
-/* Logo */
-header img {
+.logo {
     width: 80px;
     max-width: 25%;
     height: auto;
 }
 
-/* Title + nav */
-header .title-nav {
+.header-text-nav {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -44,16 +82,13 @@ header .title-nav {
 
 header h1 {
     font-size: 1.8rem;
-    color: white;
 }
 
 header h3 {
     font-size: 1rem;
-    color: white;
     margin-bottom: 5px;
 }
 
-/* Navigation links */
 header nav {
     display: flex;
     gap: 10px;
@@ -66,104 +101,67 @@ header nav a {
     font-weight: bold;
     padding: 5px 10px;
     border-radius: 5px;
-    background-color: #b92d49;
-    transition: background 0.3s;
+    background-color: rgba(185, 45, 73, 1);
+    transition: 0.3s;
 }
 
 header nav a:hover {
     background-color: #a12740;
 }
 
-/* ===== Container & Text ===== */
-.container {
-    padding: 20px;
-}
-
-.intro, .text, .causes {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.intro h3 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-}
-
-.intro p {
-    font-size: 1rem;
-    margin-bottom: 10px;
-}
-
-.intro button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 10px;
-    cursor: pointer;
-    background-color: cadetblue;
-    border: none;
-    color: white;
-}
-
-/* Headings */
-.container h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
 /* ===== Cards / Sections ===== */
-.media, .solns, .impact {
+.cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
-    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
-.media div, .solns div, .impact div {
-    background-color: #b92d49;
+.card {
+    background: rgba(185, 45, 73, 0.9);
     border-radius: 10px;
-    padding: 10px;
-    flex: 1 1 250px; /* responsive width */
+    padding: 15px;
+    flex: 1 1 250px;
     text-align: center;
 }
 
-.media img, .solns img, .impact img {
+.card h4 {
+    margin: 10px 0;
+}
+
+.card img {
     width: 100%;
-    max-width: 100%;
     height: auto;
     border-radius: 10px;
     object-fit: cover;
-    margin-bottom: 10px;
 }
 
-/* Buttons in cards */
-.media button, .solns button, .impact button {
-    padding: 8px 15px;
-    margin-top: 10px;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    background-color: cadetblue;
-    color: white;
-}
-
-/* ===== Video Embed ===== */
-.causes iframe {
-    max-width: 100%;
-    width: 100%;
-    height: auto;
+/* ===== Video Section ===== */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
     border-radius: 10px;
     margin: 10px 0;
 }
 
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 /* ===== Footer ===== */
 footer {
-    background: #b92d49;
-    border-radius: 10px;
-    padding: 10px;
-    text-align: center;
+    background: rgba(185, 45, 73, 0.9);
     color: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
 }
 
 footer a {
@@ -174,65 +172,63 @@ footer a {
 
 /* ===== Responsive Media Queries ===== */
 
-/* Large screens */
-@media (max-width: 1200px) {
-    header img {
-        width: 70px;
-    }
-    .container h2 {
-        font-size: 1.8rem;
-    }
-}
-
 /* Tablets */
 @media (max-width: 768px) {
-    header .logo-title-nav {
+    .header-container {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
-    header .title-nav {
+
+    .header-text-nav {
         align-items: center;
     }
-    header img {
+
+    .logo {
         width: 60px;
     }
-    .media div, .solns div, .impact div {
-        flex: 1 1 200px;
-    }
-    .intro h3 {
+
+    h1 {
         font-size: 1.5rem;
     }
-    .intro p {
-        font-size: 0.95rem;
+
+    h3 {
+        font-size: 0.9rem;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    button {
+        width: 90%;
     }
 }
 
 /* Phones */
 @media (max-width: 480px) {
-    header img {
+    .logo {
         width: 50px;
     }
-    header h1 {
+
+    h1 {
         font-size: 1.3rem;
     }
-    header h3 {
-        font-size: 0.9rem;
+
+    h3 {
+        font-size: 0.8rem;
     }
-    header nav {
+
+    .cards {
         flex-direction: column;
-        gap: 5px;
     }
-    .media div, .solns div, .impact div {
-        flex: 1 1 100%;
+
+    button {
+        width: 95%;
     }
-    .intro h3 {
-        font-size: 1.2rem;
-    }
-    .intro p {
+
+    p {
         font-size: 0.9rem;
-    }
-    .intro button {
-        width: 90%;
     }
 }
