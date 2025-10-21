@@ -6,7 +6,7 @@
 }
 
 body {
-    background: #f2f2f2; /* soft background */
+    background: #f2f2f2; /* soft neutral background */
     font-family: Verdana, Tahoma, sans-serif;
     font-size: 16px;
     line-height: 1.5;
@@ -16,97 +16,145 @@ body {
 header {
     background: #b92d49;
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    gap: 5px;
-    text-align: center;
+    padding: 10px 20px;
 }
 
+header .logo-title-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Logo */
 header img {
-    width: 25%;
-    max-width: 150px;
+    width: 80px;
+    max-width: 25%;
     height: auto;
 }
 
-/* ===== Headings ===== */
-.container h2 {
-    text-align: center;
-    font-size: 2.5vw;
-    margin: 10px 0;
+/* Title + nav */
+header .title-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-.container h2 p {
-    text-align: center;
-    font-size: 1.5vw;
-    margin: 5px 0 15px;
+header h1 {
+    font-size: 1.8rem;
+    color: white;
 }
 
-/* ===== Buttons ===== */
-button {
-    background-color: cadetblue;
-    border: none;
-    cursor: pointer;
-    border-radius: 10px;
+header h3 {
+    font-size: 1rem;
+    color: white;
+    margin-bottom: 5px;
+}
+
+/* Navigation links */
+header nav {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+header nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #b92d49;
+    transition: background 0.3s;
+}
+
+header nav a:hover {
+    background-color: #a12740;
+}
+
+/* ===== Container & Text ===== */
+.container {
+    padding: 20px;
+}
+
+.intro, .text, .causes {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.intro h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.intro p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.intro button {
     padding: 10px 20px;
     font-size: 1rem;
-    margin: 10px 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: cadetblue;
+    border: none;
+    color: white;
 }
 
-/* ===== Inputs ===== */
-input {
-    border-radius: 10px;
-    padding: 10px;
-    width: 100%;
-    max-width: 100%;
+/* Headings */
+.container h2 {
     text-align: center;
-    margin: 10px auto;
-    display: block;
-    font-size: 1rem;
+    font-size: 2rem;
+    margin-bottom: 10px;
 }
 
 /* ===== Cards / Sections ===== */
-.meal, .field, .crops,
-.practices, .people, .nutrition,
-.classroom, .fields, .food {
-    border-radius: 10px;
-    background: #b92d49;
-    margin: 10px;
-    text-align: center;
-    padding: 10px;
-    flex: 1 1 250px; /* flexible for responsiveness */
-}
-
-/* ===== Media / Image Containers ===== */
-.media,
-.solns,
-.impact {
+.media, .solns, .impact {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
+    margin-bottom: 20px;
 }
 
-.media img,
-.solns img,
-.impact img {
+.media div, .solns div, .impact div {
+    background-color: #b92d49;
+    border-radius: 10px;
+    padding: 10px;
+    flex: 1 1 250px; /* responsive width */
+    text-align: center;
+}
+
+.media img, .solns img, .impact img {
     width: 100%;
-    max-width: 300px; /* default max width */
+    max-width: 100%;
     height: auto;
     border-radius: 10px;
-    flex: 1 1 250px; /* grow/shrink */
+    object-fit: cover;
+    margin-bottom: 10px;
 }
 
-/* ===== Text Sections ===== */
-.intro,
-.text,
-.causes,
-.jar {
-    text-align: center;
-    font-size: 1rem;
-    margin: 10px;
+/* Buttons in cards */
+.media button, .solns button, .impact button {
+    padding: 8px 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: cadetblue;
+    color: white;
+}
+
+/* ===== Video Embed ===== */
+.causes iframe {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 10px 0;
 }
 
 /* ===== Footer ===== */
@@ -118,51 +166,44 @@ footer {
     color: white;
 }
 
+footer a {
+    color: white;
+    margin: 0 5px;
+    text-decoration: none;
+}
+
 /* ===== Responsive Media Queries ===== */
 
-/* Large screens (laptops) */
+/* Large screens */
 @media (max-width: 1200px) {
     header img {
-        width: 20%;
-        max-width: 130px;
+        width: 70px;
     }
     .container h2 {
-        font-size: 2rem;
-    }
-    .container h2 p {
-        font-size: 1.25rem;
-    }
-    .media img,
-    .solns img,
-    .impact img {
-        max-width: 250px;
+        font-size: 1.8rem;
     }
 }
 
 /* Tablets */
 @media (max-width: 768px) {
+    header .logo-title-nav {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    header .title-nav {
+        align-items: center;
+    }
     header img {
-        width: 25%;
-        max-width: 110px;
+        width: 60px;
     }
-    .container h2 {
-        font-size: 1.8rem;
-    }
-    .container h2 p {
-        font-size: 1.1rem;
-    }
-    .media img,
-    .solns img,
-    .impact img {
-        max-width: 200px;
-    }
-    .meal, .field, .crops,
-    .practices, .people, .nutrition,
-    .classroom, .fields, .food {
+    .media div, .solns div, .impact div {
         flex: 1 1 200px;
     }
-    button {
-        padding: 8px 15px;
+    .intro h3 {
+        font-size: 1.5rem;
+    }
+    .intro p {
         font-size: 0.95rem;
     }
 }
@@ -170,33 +211,28 @@ footer {
 /* Phones */
 @media (max-width: 480px) {
     header img {
-        width: 35%;
-        max-width: 90px;
+        width: 50px;
     }
-    .container h2 {
-        font-size: 1.5rem;
+    header h1 {
+        font-size: 1.3rem;
     }
-    .container h2 p {
-        font-size: 1rem;
+    header h3 {
+        font-size: 0.9rem;
     }
-    .media img,
-    .solns img,
-    .impact img {
-        flex: 1 1 100%; /* full width on phones */
-        max-width: 100%;
+    header nav {
+        flex-direction: column;
+        gap: 5px;
     }
-    .meal, .field, .crops,
-    .practices, .people, .nutrition,
-    .classroom, .fields, .food {
+    .media div, .solns div, .impact div {
         flex: 1 1 100%;
     }
-    button {
-        width: 90%;
-        padding: 8px;
-        font-size: 0.95rem;
+    .intro h3 {
+        font-size: 1.2rem;
     }
-    input {
-        width: 95%;
-        font-size: 0.95rem;
+    .intro p {
+        font-size: 0.9rem;
+    }
+    .intro button {
+        width: 90%;
     }
 }
