@@ -1,3 +1,4 @@
+/* ===== Base Styles ===== */
 body{
     background: crimson;
     font-family: verdana, tahoma;
@@ -5,91 +6,136 @@ body{
     padding: 5px;
     margin: 20px;
 }
+
+/* ===== Header ===== */
 header{
     background: rgb(185, 45, 73);
-border-radius: 10px;
-text-align: center;
-}
-header img{
-    width: 200px;
-    background: transparent;
-}
-.intro{
+    border-radius: 10px;
     text-align: center;
 }
- button{
+
+header img{
+    width: 200px;
+    max-width: 100%;
+    height: auto;
+    background: transparent;
+}
+
+/* ===== Text Sections ===== */
+.intro,
+.text,
+.causes,
+.jar{
+    text-align: center;
+}
+
+button{
     background-color: cadetblue;
     cursor: pointer;
     border-radius: 10px;
     padding: 10px;
 }
-.text{
-    text-align: center;
-}
-.media{
-    display: flex;
-    text-align: center;
-    
-}
-.media img{
-    width: 400px;
-}
-.solns img{
-    width: 400px;
-}
-.impact img{
-    width: 400px;
-}
 
-.meal, .field, .crops{
-border-radius: 10px;
-background: rgb(185,45,73);
-margin: 10px;
-text-align: center;
-}
-.solns{
-    display: flex;
-    border-radius: 10px;
-}
-.practices,.people,.nutrition{
-    border-radius: 10px;
-    margin: 10px;
-    background: rgb(185, 45, 73);
-    text-align: center;
-}
-.container h2{
-    text-align: center;
-}
+/* ===== Media & Images ===== */
+.media,
+.solns,
 .impact{
     display: flex;
-    text-align: center;
+    flex-wrap: wrap; /* allows items to wrap on small screens */
+    justify-content: center;
+    gap: 10px; /* space between images */
 }
-.classroom,.fields,.food{
+
+.media img,
+.solns img,
+.impact img{
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* ===== Cards / Sections ===== */
+.meal, .field, .crops,
+.practices, .people, .nutrition,
+.classroom, .fields, .food{
     border-radius: 10px;
     background: rgb(185, 45, 73);
     margin: 10px;
-}
-footer{
-    background: rgb(185, 45, 73);
-    border-radius: 10px;
-}
-.causes{
     text-align: center;
+    padding: 10px;
 }
 
+/* ===== Containers ===== */
+.container h2,
 .container h2 p{
     text-align: center;
 }
 
+/* ===== Footer ===== */
+footer{
+    background: rgb(185, 45, 73);
+    border-radius: 10px;
+}
 
-
+/* ===== Inputs ===== */
 input{
     border-radius: 10px;
     padding: 10px;
-    width: 1250px;
+    width: 100%; /* responsive width */
+    max-width: 1250px;
     text-align: center;
-    margin: 10px;
+    margin: 10px auto;
+    display: block;
 }
-.jar{
-    text-align: center;
+
+/* ===== Responsive Media Queries ===== */
+@media (max-width: 1024px) {
+    /* Laptops / tablets */
+    header img{
+        width: 150px;
+    }
+    .media img,
+    .solns img,
+    .impact img{
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Tablets / large phones */
+    body{
+        margin: 10px;
+        padding: 5px;
+    }
+    header img{
+        width: 120px;
+    }
+    .media img,
+    .solns img,
+    .impact img{
+        max-width: 250px;
+    }
+    input{
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Phones */
+    header img{
+        width: 100px;
+    }
+    .media img,
+    .solns img,
+    .impact img{
+        max-width: 100%;
+    }
+    button{
+        width: 90%;
+        padding: 8px;
+    }
+    input{
+        max-width: 95%;
+    }
 }
